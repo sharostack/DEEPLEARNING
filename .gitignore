@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Model checkpoints and downloaded weights
+
+*.ckpt
+*.safetensors
+*.pth
+*.pt
+*.onnx
+*.pkl
+checkpoints/
+weights/
+pretrained/
+third_party/*/checkpoints/
+third_party/*/weights/
+third_party/*/pretrained/
+
+# Datasets and generated assets
+datasets/**
+!datasets/README.md
+!datasets/config.example.yaml
+outputs/**
+!outputs/.gitkeep
+data/
+results/
+
+# Experiment / editor noise
+*.log
+.DS_Store
+.idea/
+.vscode/
+wandb/
+mlruns/
+

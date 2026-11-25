@@ -1,0 +1,21 @@
+# Native Apple Silicon development environment (Python 3.12, macOS 15+).
+# PyTorch's macOS wheels include MPS; do not install CUDA/xformers/Detectron2.
+torch==2.11.0
+torchvision==0.26.0
+
+# CatVTON inference and project tensor/data utilities.
+diffusers==0.35.2
+transformers==4.53.0
+accelerate==1.11.0
+huggingface-hub==0.36.0
+safetensors>=0.5,<1
+
+# Keep the NumPy/SciPy range compatible with the checked-in CatVTON metadata.
+numpy==1.26.4
+scipy==1.13.1
+Pillow==10.4.0
+opencv-python-headless==4.10.0.84
+PyYAML==6.0.1
+scikit-image==0.24.0
+tqdm==4.66.4
+pytest==8.4.2

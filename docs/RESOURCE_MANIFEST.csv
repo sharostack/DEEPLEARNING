@@ -1,0 +1,9 @@
+resource,source,destination,version_or_revision,status,notes
+CatVTON source,https://github.com/Zheng-Chong/CatVTON,catvtoncode/Comfyui-CatVTON,,unofficial_comfyui_checkout,"Local origin is pzc163/Comfyui-CatVTON, not the canonical repository"
+CatVTON model files,https://huggingface.co/zhengchong/CatVTON,checkpoints/CatVTON,2969fcf85fe62f2036605716f0b56f0b81d01d79,partial,"SCHP LIP/ATR and DensePose match snapshot sizes/hashes; attention safetensors are absent. SD base and VAE are also absent"
+Stable Diffusion inpainting,https://huggingface.co/runwayml/stable-diffusion-inpainting,checkpoints/stable-diffusion-inpainting,,not_downloaded,"CatVTON README identifies SD 1.5 inpainting; exact revision/access terms not verified"
+VITON-HD source,https://github.com/shadow2496/VITON-HD,third_party/VITON-HD,02afa4b5228786238f164be347ddadfead221482,downloaded,"Official source checkout; commit recorded; see upstream README"
+VITON-HD dataset,https://drive.google.com/file/d/1tLx8LRp-sxDp0EcYmYoV_vXdSc-jJ79w/view?usp=sharing,data/VTON-HD,,present_and_validated,"11,647 train / 2,032 test pairs; full asset and dimensions validation passed"
+ViTPose source,https://github.com/ViTAE-Transformer/ViTPose,third_party/ViTPose,c050ed29112da7704797cc1a65af0234b525010d,downloaded,"Official source and configs; commit recorded; legacy MMPose/MMCV project"
+ViTPose checkpoint,unknown local source,checkpoints/ViTPose/vitpose_small.pth,,present_unverified,"93 MiB local checkpoint; provenance and compatibility with configured ViTPose Base WholeBody config not established; MMPose/MMCV absent"
+PGS synthetic fixtures,project-generated,tests/test_pgs_synthetic.py,local,created,"Synthetic unit tests only; no external data"

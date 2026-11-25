@@ -1,0 +1,5 @@
+defaults: experiment.yaml
+experiment: B
+mask_source: bamnet
+pgs:
+  enabled: false

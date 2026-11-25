@@ -1,0 +1,57 @@
+# Proposal-level defaults only. Verify CatVTON arguments against the pinned
+# upstream checkout before using this as an executable inference config.
+resolution:
+  height: 1024
+  width: 768
+batch_size: 1
+runtime:
+  device: auto # mps, cuda, cpu, or auto
+  dataloader_workers: 0
+  gradient_accumulation_steps: 1
+  precision: fp32
+development:
+  enabled: false
+  # Explicit smoke-test values only; evaluation keeps resolution above.
+  resolution:
+    height: 512
+    width: 384
+  num_inference_steps: 5
+  pgs_correction_steps: 1
+  pgs_forward_iteration_indices: [10]
+catvton:
+  frozen: true
+  upstream_repo: https://github.com/Zheng-Chong/CatVTON
+  checkpoint_repo: https://huggingface.co/zhengchong/CatVTON
+  precision: null # choose after checking actual accelerator and upstream support
+  num_inference_steps: 50
+mask_source: automasker # automasker | bamnet | auto
+masks:
+  derived_root: data/derived
+  automasker_directory: automasker_M0
+  bamnet_directory: bamnet_M
+  expected_height: 1024
+  expected_width: 768
+pgs:
+  enabled: false
+  vitpose:
+    config: third_party/ViTPose/configs/wholebody/2d_kpt_sview_rgb_img/topdown_heatmap/coco-wholebody/ViTPose_base_wholebody_256x192.py
+    checkpoint: null # Supply a locally obtained compatible checkpoint; none is bundled.
+  soft_argmax_temperature: 0.1 # softmax(heatmap / temperature)
+  forward_iteration_indices: [10, 15, 20, 25, 30, 35]
+  correction_strength: 0.01
+  strength_by_step: {}
+  correction_mask: editable_person # editable_person | whole_person
+  min_confidence: 0.2
+  epsilon: 1.0e-8
+  sips:
+    # Person 3 must provide the agreed seven ratios as name: [a,b,c,d].
+    # Each entry means distance(a,b) / distance(c,d); empty until supplied.
+    ratio_definitions: {}
+dataset:
+  name: VITON-HD
+  root: data/VTON-HD # Current local folder name; upstream dataset/project name remains VITON-HD.
+  split: train # train | test | val; retain the actual source split name
+  train_pairs: train_pairs.txt
+  test_pairs: test_pairs.txt
+checkpoints:
+  root: checkpoints

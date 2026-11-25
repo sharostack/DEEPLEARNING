@@ -1,0 +1,5 @@
+# Intentionally no guessed global pins yet.
+# Install the official CatVTON requirements from its checked-out upstream revision
+# in a dedicated environment, after selecting the target CUDA/PyTorch stack.
+# See docs/SETUP.md. Development dependencies will be pinned after upstream
+# source inspection and on-host compatibility checks.

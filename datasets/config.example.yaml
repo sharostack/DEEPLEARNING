@@ -1,0 +1,3 @@
+viton_hd_root: data/VTON-HD
+train_pairs: train_pairs.txt
+test_pairs: test_pairs.txt

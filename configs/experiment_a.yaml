@@ -1,0 +1,5 @@
+defaults: experiment.yaml
+experiment: A
+mask_source: automasker
+pgs:
+  enabled: false
